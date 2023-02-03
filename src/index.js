@@ -1,17 +1,46 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+//const element = document.createElement('h1')
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+//element.innerText='hola word'
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+//const container =document.getElementById('root')
+
+//container.appendChild(element)
+
+
+import React from 'react'
+import ReactDOM from 'react-dom'
+
+const user ={
+  firstName:'jose',
+  lastName:'Sandoval',
+  avatar:'https://gravatar.com/avatar/3f41c9d9c8e8d0bd1987686c911b86d6?s=400&d=robohash&r=x'
+}
+
+function getName(user){
+  return `${user.firstName} ${user.lastName}`
+}
+
+function getSaludo(user){
+  if(user){
+     return <h1>holap {getName(user)}</h1>
+  }
+  return <h1>registrese</h1>
+}
+
+const name='Jose'
+//const element=<div>{getSaludo(user)}</div>
+
+const element =(
+  <div>
+    <h1>{getSaludo(user)}</h1>
+    <img src={user.avatar} />
+  </div>
+)
+
+
+
+const container=document.getElementById('root')
+
+//ReactDOM.render(___que____donde___)
+
+ReactDOM.render(element,container)
